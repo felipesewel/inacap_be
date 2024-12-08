@@ -1,0 +1,15 @@
+{% extends "gestion/base.html" %}
+
+{% block title %}Lista de Usuarios{% endblock %}
+
+{% block content %}
+    <h1 class="text-center text-primary">Lista de Usuarios</h1>
+    <ul class="list-group mt-4">
+        {% for usuario in usuarios %}
+            <li class="list-group-item">
+                <strong>{{ usuario.nombre }} {{ usuario.apellido }}</strong>
+                <span class="text-muted">- {{ usuario.tipo_usuario }}</span>
+            </li>
+        {% endfor %}
+    </ul>
+{% endblock %}

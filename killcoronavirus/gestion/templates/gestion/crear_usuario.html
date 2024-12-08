@@ -1,0 +1,39 @@
+{% extends "gestion/base.html" %}
+
+{% block title %}Crear Usuario{% endblock %}
+
+{% block content %}
+<h1 class="text-center text-primary">Crear Nuevo Usuario</h1>
+<form method="post" class="mt-4">
+    {% csrf_token %}
+    <div class="mb-3">
+        <label for="nombre" class="form-label">Nombre</label>
+        <input type="text" class="form-control" id="nombre" name="nombre" required>
+    </div>
+    <div class="mb-3">
+        <label for="apellido" class="form-label">Apellido</label>
+        <input type="text" class="form-control" id="apellido" name="apellido" required>
+    </div>
+    <div class="mb-3">
+        <label for="correo" class="form-label">Correo Electrónico</label>
+        <input type="email" class="form-control" id="correo" name="correo" required>
+    </div>
+    <div class="mb-3">
+        <label for="usuario" class="form-label">Usuario</label>
+        <input type="text" class="form-control" id="usuario" name="usuario" required>
+    </div>
+    <div class="mb-3">
+        <label for="contraseña" class="form-label">Contraseña</label>
+        <input type="password" class="form-control" id="contraseña" name="contraseña" required>
+    </div>
+    <div class="mb-3">
+        <label for="tipo_usuario" class="form-label">Tipo de Usuario</label>
+        <select class="form-select" id="tipo_usuario" name="tipo_usuario" required>
+            <option value="Médico">Médico</option>
+            <option value="Administrador">Administrador</option>
+        </select>
+    </div>
+    <button type="submit" class="btn btn-primary">Crear Usuario</button>
+</form>
+{% endblock %}
+
